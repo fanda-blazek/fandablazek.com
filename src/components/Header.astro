@@ -1,15 +1,32 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import Container from "./Container.astro";
+import Socials from "./Socials.astro";
+import Avatar from "./Avatar.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header>
-  <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div>
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-    </div>
-  </nav>
+<header class="border-b border-b-neutral-800">
+  <Container>
+    <nav class="flex flex-col gap-6 sm:flex-row justify-between items-center py-4">
+      <a href="/" class="flex items-center gap-2">
+        <Avatar />
+        <h2 class="text-xl font-bold">{SITE_TITLE}</h2>
+      </a>
+      <div class="flex items-center gap-8">
+        <ul class="flex items-center gap-4">
+          <li>
+            <HeaderLink href="/">Home</HeaderLink>
+          </li>
+          <li>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+          </li>
+          <li>
+            <HeaderLink href="/about">About</HeaderLink>
+          </li>
+        </ul>
+        <Socials />
+      </div>
+    </nav>
+  </Container>
 </header>

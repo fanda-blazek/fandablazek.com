@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"button">;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<button
+  id="back-button"
+  class:list={[
+    className,
+    "underline underline-offset-2 cursor-pointer dark:hover:bg-white dark:hover:text-neutral-900 hover:no-underline",
+  ]}
+  {...props}
+>
+  &larr; Go back
+</button>
+
+<script>
+  const button = document.querySelector("#back-button");
+
+  if (button) {
+    button.addEventListener("click", () => {
+      window.history.back();
+    });
+  }
+</script>

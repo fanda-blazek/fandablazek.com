@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import BackButton from "../components/BackButton.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "./BaseLayout.astro";
 import { Image } from "astro:assets";
@@ -15,6 +16,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       <div>
         {heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
       </div>
+      <BackButton />
       <div class="prose">
         <div>
           <div>

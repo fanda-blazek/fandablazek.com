@@ -1,7 +1,14 @@
 ---
+import Container from "./Container.astro";
+import Socials from "./Socials.astro";
 const today = new Date();
 ---
 
-<footer>
-  &copy; {today.getFullYear()} Your name here. All rights reserved.
+<footer class="border-t border-neutral-800">
+  <Container class="flex flex-col items-center justify-center py-8 gap-4">
+    <p>
+      Copyright &copy; {today.getFullYear()} - All rights reserved.
+    </p>
+    <Socials />
+  </Container>
 </footer>

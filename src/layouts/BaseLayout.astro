@@ -1,6 +1,10 @@
 ---
+import "../styles/global.css";
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import Container from "../components/Container.astro";
 import Footer from "../components/Footer.astro";
 
 const { title, description } = Astro.props;
@@ -11,12 +15,12 @@ const { title, description } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
 
-  <body class="bg-neutral-900 text-neutral-100 antialiased font-geist-mono">
-    <div
-      class="min-h-dvh flex flex-col justify-between *:shrink-0 *:grow-0 [&_main]:shrink-1 [&_main]:grow-1"
-    >
+  <body class="bg-neutral-900 text-neutral-300 antialiased font-sans">
+    <div class="min-h-dvh grid grid-rows-[auto_1fr_auto]">
       <Header />
-      <slot />
+      <Container class="py-8">
+        <slot />
+      </Container>
       <Footer />
     </div>
   </body>

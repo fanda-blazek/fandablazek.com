@@ -1,13 +1,21 @@
 @import "tailwindcss";
+@import "./prose.css" layer(components);
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-geist-mono: "Geist Mono Variable", monospace;
+@layer base {
+  :root {
+    --default-font-sans:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    --default-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --default-font-mono:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
+  }
 }
 
-body {
-  margin-inline: auto;
-  max-width: 65ch;
-  padding-block: 2rem;
+@theme {
+  --font-geist: "Geist Variable", var(--default-font-sans);
+  --font-geist-mono: "Geist Mono Variable", var(--default-font-mono);
 }
